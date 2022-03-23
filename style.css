@@ -1,0 +1,371 @@
+:root {
+  /* Color */
+  --red-color: #d50000;
+  --black-color: #212121;
+  --grey-dark-color: #616161;
+  --grey-light-color: #e0e0e0;
+  --white-color: #fafafa;
+  --blue-color: #1e88e5;
+  --very-white-color: #ffffff;
+  /* Font */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+  --avarta-size: 36px;
+  --letter-avarta-size: 30px;
+
+  /* Padding */
+  --padding: 12px;
+  --margin: 5px;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* 헤더 */
+.Header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--black-color);
+  padding: calc(var(--padding) / 2);
+}
+
+.Header .logo i {
+  color: var(--red-color);
+}
+
+.Header .logo {
+  color: var(--white-color);
+  font-size: var(--font-large);
+}
+
+.Header .icons {
+  color: var(--white-color);
+}
+
+.Header .icons span {
+  padding: calc(var(--padding) / 3);
+}
+
+/* 영상 */
+.Video {
+  /* position: sticky;
+  top: 0; */
+  text-align: center;
+  background-color: var(--black-color);
+}
+
+.Video video {
+  width: 100%;
+  height: 100%;
+  max-width: 1024px;
+}
+
+/* 영상 제목, 영상 정보, 채널 정보 */
+
+/* 해시 태그 */
+
+.InfoAndNext .Info .metadata .hashtags {
+  display: flex;
+  list-style: none;
+  color: var(--blue-color);
+  padding-top: var(--padding);
+}
+
+.InfoAndNext .Info .metadata .hashtags li {
+  font-size: var(--font-small);
+  margin-left: var(--margin);
+}
+
+/* 영상 제목 */
+.InfoAndNext .Info .metadata .titleAndbutton {
+  display: flex;
+  margin: var(--margin) var(--margin);
+  justify-content: space-between;
+}
+
+/* [클릭 후] clamp가 사라져서 모든 제목이 보임 */
+.InfoAndNext .Info .metadata .titleAndbutton .title {
+}
+
+/* [클릭 전] 맨처음에는 clamp가 존재해서 2줄만 보여주다가 클릭하면 clamp가 사라져서 모든 제목을 볼 수 있다. */
+.InfoAndNext .Info .metadata .titleAndbutton .title.clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.InfoAndNext .Info .metadata .titleAndbutton > button {
+  background-color: var(--very-white-color);
+  height: 100%;
+  border: none;
+  cursor: pointer;
+}
+/* [클릭] */
+.InfoAndNext .Info .metadata .titleAndbutton .title_more {
+  /* transition은 버튼(속성)을 서서히 변화 시키는 속성 */
+  transition: transform 300ms ease-in-out;
+}
+
+/* [클릭됐을 경우만] 버튼이 180도 회전 */
+.InfoAndNext .Info .metadata .titleAndbutton .title_more.clicked {
+  /* 움직이고 변할 때 사용*/
+  transform: rotate(180deg);
+}
+
+.icons ul li > button,
+.icons ul li > button:focus {
+  background-color: var(--very-white-color);
+  height: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+/* 조회수 및 업로드 시간 */
+.Info .metadata .views {
+  margin-left: var(--margin);
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.Info .metadata .views span:last-child {
+  padding-left: var(--padding);
+}
+
+/* 아이콘 */
+
+.Info .icons {
+  margin-bottom: var(--margin);
+}
+.Info .icons ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Info .icons li {
+  display: flex;
+  flex-direction: column;
+  margin: var(--margin);
+}
+
+.Info .icons button {
+  font-size: var(--font-large);
+  padding: var(--padding);
+}
+
+.Info .icons span {
+  font-size: var(--font-small);
+  text-align: center;
+}
+
+/* 채널 정보 */
+.Info .profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid var(--grey-light-color);
+  border-bottom: 2px solid var(--grey-light-color);
+  margin: 0px var(--margin);
+}
+
+.Info .profile .name {
+  display: flex;
+  padding-left: var(--padding);
+  align-items: center;
+}
+
+.Info .profile .name img {
+  width: var(--avarta-size);
+  height: var(--avarta-size);
+  border-radius: 50%;
+}
+
+.Info .profile .name .NameAndSub {
+  padding: calc(var(--padding) / 2);
+}
+
+.Info .profile .name .NameAndSub div:last-child {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.Info .profile .state {
+  padding-right: var(--padding);
+  color: var(--red-color);
+  font-size: var(--font-small);
+  text-transform: uppercase;
+}
+
+/* 댓글 */
+.Message .metadata {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Message .metadata .letterAndnumber {
+  display: flex;
+  padding: var(--padding);
+}
+
+.Message .metadata .letterAndnumber .letter {
+  margin-right: var(--margin);
+}
+
+.Message .metadata .letterAndnumber .number {
+  margin-left: var(--margin);
+  color: var(--grey-dark-color);
+}
+
+.Message .metadata > button {
+  border: none;
+  background-color: #ffffff;
+  margin-right: calc(var(--margin) * 3);
+  cursor: pointer;
+}
+/* 댓글 더보기 버튼 */
+.Message .metadata .upAnddown {
+  transition: transform 0.3s ease-in-out;
+}
+.Message .metadata .upAnddown.clicked {
+  transform: rotate(180deg);
+}
+
+.Message .list {
+  display: flex;
+  margin: var(--margin);
+  padding-left: calc(var(--padding));
+  padding-right: calc(var(--padding));
+}
+.Message .list li {
+  display: flex;
+  padding: calc(var(--padding) / 2) 0;
+}
+
+.Message .list .img {
+  height: 30px;
+  flex: 1 1 5%;
+}
+.Message .list .img img {
+  width: var(--letter-avarta-size);
+  height: var(--letter-avarta-size);
+  margin-right: calc(var(--margin) * 2);
+  border-radius: 50%;
+}
+
+.Message .list .Msg {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 90%;
+}
+
+.Message .list .Msg .nicknameAndago .nickname {
+  color: var(--grey-dark-color);
+  font-size: var(--font-small);
+}
+
+.Message .list .Msg .nicknameAndago .ago {
+  color: var(--grey-dark-color);
+  font-size: var(--font-small);
+  padding-left: calc(var(--padding) / 4);
+}
+
+.Message .list .Msg .msg {
+  font-size: var(--font-small);
+  padding-top: calc(var(--padding) / 3);
+}
+
+.Message .list {
+  display: none;
+}
+
+.Message .list.clamp {
+  display: flex;
+  transition-property: display;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+/* 다음 동영상 */
+
+.Next .Up_Next {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+  padding: calc(var(--padding) / 2);
+  padding-top: var(--padding);
+}
+
+.Next .Next_Lists {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
+  padding: calc(var(--padding) / 2);
+}
+
+.Next .Next_Lists .Next_Info {
+  display: flex;
+  padding-bottom: var(--padding);
+}
+
+.Next .Next_Lists .Next_Info .img {
+  flex: 1 1 40%;
+}
+
+.Next .Next_Lists .Next_Info .img img {
+  width: 100%;
+}
+
+.Next .Next_Lists .Next_Info .TitleAndViews {
+  flex: 1 1 60%;
+  padding-left: var(--padding);
+}
+
+.Next .Next_Lists .Next_Info .TitleAndViews .title {
+  font-size: var(--font-medium);
+}
+
+.Next .Next_Lists .Next_Info .TitleAndViews .views {
+  color: var(--grey-dark-color);
+  font-size: var(--font-small);
+}
+
+.Next .Next_Lists .Next_Info .Next_more {
+  /*  grow 1, shirink 1, basic 5% */
+  flex: 1 1 5%;
+  border: none;
+  background-color: var(--very-white-color);
+  height: 100%;
+}
+
+.InfoAndNext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .InfoAndNext {
+    flex-direction: row;
+  }
+
+  .InfoAndNext .Info {
+    flex: 1 1 90%;
+  }
+
+  .InfoAndNext .Next {
+    flex: 1 1 90%;
+  }
+
+  .Next .Up_Next {
+    margin-left: var(--margin);
+    margin-top: var(--margin);
+  }
+
+  .Next .Next_Lists {
+    padding-top: 0;
+  }
+}
